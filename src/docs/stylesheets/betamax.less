@@ -293,18 +293,19 @@ header {
   h3 {
     font-family: @logoFontFamily;
     font-size: 36px;
-    .emboss;
 
-    &:hover {
-      .icon-rec {
-        .glow(red);
-      }
-      .icon-play {
-        .glow(greenyellow);
-      }
-      .icon-eject {
-        .glow(cyan);
-      }
+    &.btn {
+      margin: 0 0 12px;
+    }
+
+    .icon-rec {
+      .glow(red);
+    }
+    .icon-play {
+      .glow(greenyellow);
+    }
+    .icon-eject {
+      .glow(cyan);
     }
   }
 }
