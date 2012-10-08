@@ -37,6 +37,12 @@
 @import "bootstrap/responsive-767px-max.less";
 @import "bootstrap/responsive-navbar.less";
 
+// responsive breakpoints
+@phoneMax: 767px;
+@tabletMin: 768px;
+@tabletMax: 979px;
+@desktopMin: 980px;
+
 // apply a natural box layout model to all elements
 // http://paulirish.com/2012/box-sizing-border-box-ftw/
 * {
@@ -49,10 +55,18 @@
 
 body {
   background-image: url('../images/brushed_alu.png');
-  @media (max-width: 767px) {
+  @media (max-width: @phoneMax) {
     padding-left: 0;
     padding-right: 0;
   }
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 20px;
 }
 
 code {
@@ -158,6 +172,15 @@ dl {
   border-width: 3px;
   border-color: @grayLighter;
   .border-radius(6px);
+  @media (max-width: @tabletMax) {
+    padding: 16px;
+  }
+  :first-child {
+    margin-top: 0;
+  }
+  :last-child {
+    margin-bottom: 0;
+  }
 }
 
 /**
@@ -173,7 +196,7 @@ dl {
 }
 
 .documentation {
-  @media (max-width: 767px) {
+  @media (max-width: @phoneMax) {
     margin-left: 20px;
     margin-right: 20px;
   }
@@ -201,7 +224,7 @@ dl {
         text-transform: uppercase;
         padding: 0;
         margin: 15px;
-        @media (min-width: 980px) {
+        @media (min-width: @desktopMin) {
           list-style: decimal-leading-zero inside;
         }
         li {
@@ -261,38 +284,71 @@ dl {
 }
 
 header {
-  .blackMetal;
+  // saddlebrown, peru
+  #gradient > .vertical-three-colors(darken(saddlebrown, 10%), darken(saddlebrown, 5%), 25%, darken(saddlebrown, 15%));
+  // .blackMetal;
   .box-shadow(0 1px 4px rgba(0,0,0,.065));
-  color: @grayDarker;
-
+  color: darken(maroon, 6%);
   padding-top: 30px;
   padding-bottom: 30px;
   margin-bottom: 30px;
 
-  @media (max-width: 767px) {
-    padding-left: 20px;
-    padding-right: 20px;
+  @media (max-width: @phoneMax) {
+    padding: 20px;
   }
 
   .hero-unit {
-    // steelblue, lightcyan, tan
-    background-color: antiquewhite;
-    background-image: url(../images/stripes.png);
-    background-position: -50px;
+    background-color: @wellBackground;
+    background-image: url(../images/betamax.png);
+    background-position: center right;
     background-repeat: no-repeat;
     padding: 30px 48px;
-    .background-size(contain);
+    @media (max-width: @tabletMax) {
+      .background-size(contain);
+    }
+    @media (max-width: @phoneMax) {
+      background-image: url(../images/stripes-bg.png);
+      .background-size(inherit);
+      background-repeat: repeat-y;
+      margin: 0;
+      padding: 20px;
+      p {
+        line-height: 1.5;
+      }
+    }
+    @media (max-width: 499px) {
+      .background-size(50%);
+    }
     h1 {
       display: inline-block;
-      font-family: @logoFontFamily;
       font-size: 80px;
       margin-right: 30px;
+      text-transform: uppercase;
+      &:first-letter {
+        text-transform: none;
+      }
+      @media (max-width: @phoneMax) {
+        font-size: 70px;
+      }
+      @media (min-width: @tabletMin) and (max-width: @tabletMax) {
+        font-size: 60px;
+      }
+    }
+  }
+
+  @media (max-width: @phoneMax) {
+    .promos {
+      display: none;
     }
   }
 
   h3 {
-    font-family: @logoFontFamily;
     font-size: 36px;
+    text-transform: uppercase;
+
+    @media (min-width: @tabletMin) and (max-width: @tabletMax) {
+      font-size: 28px;
+    }
 
     &.btn {
       margin: 0 0 12px;
@@ -318,7 +374,7 @@ footer {
   font-size: 20px;
   .emboss;
 
-  @media (max-width: 767px) {
+  @media (max-width: @phoneMax) {
     padding-left: 20px;
     padding-right: 20px;
   }
