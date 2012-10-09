@@ -43,6 +43,8 @@
 @tabletMax: 979px;
 @desktopMin: 980px;
 
+@headingColor: #5E102F;
+
 // apply a natural box layout model to all elements
 // http://paulirish.com/2012/box-sizing-border-box-ftw/
 * {
@@ -54,7 +56,7 @@
  */
 
 body {
-  background-image: url('../images/brushed_alu.png');
+  background-image: url('../images/noise-bg.png');
   @media (max-width: @phoneMax) {
     padding-left: 0;
     padding-right: 0;
@@ -166,11 +168,15 @@ dl {
 }
 
 .promo {
-  .well;
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: @bodyBackground;
+  #gradient > .radial(@bodyBackground, tan);
   .box-shadow(inset 0 1px 6px rgba(0, 0, 0, .75));
-  border-width: 3px;
-  border-color: @grayLighter;
+  border: 3px solid @grayLighter;
   .border-radius(6px);
+  .box-shadow(inset 0 1px 6px rgba(0, 0, 0, .75));
   @media (max-width: @tabletMax) {
     padding: 16px;
   }
@@ -283,11 +289,9 @@ dl {
 }
 
 header {
-  // saddlebrown, peru
   #gradient > .vertical-three-colors(darken(saddlebrown, 10%), darken(saddlebrown, 5%), 25%, darken(saddlebrown, 15%));
-  // .blackMetal;
   .box-shadow(0 1px 4px rgba(0,0,0,.065));
-  color: darken(maroon, 6%);
+  color: @headingColor;
   padding-top: 30px;
   padding-bottom: 30px;
   margin-bottom: 30px;
@@ -297,20 +301,21 @@ header {
   }
 
   .hero-unit {
-    background-color: @wellBackground;
+    background-color: darken(@bodyBackground, 5%);
     background-image: url(../images/betamax.png);
     background-position: center right;
     background-repeat: no-repeat;
-    padding: 30px 48px;
+    padding: 30px 113px 30px 48px;
     @media (max-width: @tabletMax) {
       .background-size(contain);
+      padding-right: 98px;
     }
     @media (max-width: @phoneMax) {
       background-image: url(../images/stripes-bg.png);
       .background-size(inherit);
       background-repeat: repeat-y;
       margin: 0;
-      padding: 20px;
+      padding: 20px 87px 20px 20px;
       p {
         line-height: 1.5;
       }
@@ -320,10 +325,10 @@ header {
       font-size: 80px;
       margin-right: 30px;
       text-transform: uppercase;
-      &:first-letter {
-        text-transform: none;
+      @media (max-width: 499px) {
+        font-size: 46px;
       }
-      @media (max-width: @phoneMax) {
+      @media (min-width: 500px) and (max-width: @phoneMax) {
         font-size: 70px;
       }
       @media (min-width: @tabletMin) and (max-width: @tabletMax) {
@@ -332,8 +337,8 @@ header {
     }
   }
 
-  @media (max-width: @phoneMax) {
-    .promos {
+  .promos {
+    @media (max-width: @phoneMax) {
       display: none;
     }
   }
