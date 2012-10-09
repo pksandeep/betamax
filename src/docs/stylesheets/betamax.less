@@ -43,8 +43,6 @@
 @tabletMax: 979px;
 @desktopMin: 980px;
 
-@headingColor: #5E102F;
-
 // apply a natural box layout model to all elements
 // http://paulirish.com/2012/box-sizing-border-box-ftw/
 * {
@@ -247,23 +245,15 @@ dl {
   }
   #doc-content {
     h2 {
-      .sticker-horizontal;
+      background-image: url("../images/stripes-bg.png");
+      background-position: top right;
+      background-repeat: repeat-y;
+      border-bottom: 1px solid @headingsColor;
       font-size: 48px;
-      margin: 36px 0 24px;
+      margin: 48px 0 24px;
       &:first-child {
         margin-top: 12px;
       }
-      &:first-of-type { .rotate(-0.25deg); }
-      &:nth-of-type(2) { .rotate(-0.5deg); }
-      &:nth-of-type(3) { .rotate(0.25deg); }
-      &:nth-of-type(4) { .rotate(-0.25deg); }
-      &:nth-of-type(4) { .rotate(-0.75deg); }
-      &:nth-of-type(5) { .rotate(0.5deg); }
-      &:nth-of-type(6) { .rotate(-0.25deg); }
-      &:nth-of-type(7) { .rotate(-0.75deg); }
-      &:nth-of-type(8) { .rotate(1deg); }
-      &:nth-of-type(9) { .rotate(0.25deg); }
-      &:nth-of-type(10) { .rotate(0.5deg); }
     }
 
     .navbar {
@@ -291,7 +281,6 @@ dl {
 header {
   #gradient > .vertical-three-colors(darken(saddlebrown, 10%), darken(saddlebrown, 5%), 25%, darken(saddlebrown, 15%));
   .box-shadow(0 1px 4px rgba(0,0,0,.065));
-  color: @headingColor;
   padding-top: 30px;
   padding-bottom: 30px;
   margin-bottom: 30px;
