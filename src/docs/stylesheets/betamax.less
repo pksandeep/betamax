@@ -118,16 +118,6 @@ dl {
  * Stylistic mixins
  */
 
-.emboss {
-  color: @black;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, .1), 0 0 30px rgba(255, 255, 255, .125);
-}
-
-.glow(@color: @white) {
-  color: @color;
-  text-shadow: 0 1px 0 fadeout(@color, 90%), 0 0 30px fadeout(@color, 60%);
-}
-
 .promo {
   min-height: 20px;
   padding: 19px;
@@ -189,7 +179,10 @@ dl {
         color: @grayLighter;
         font-size: 30px;
         margin-top: 0;
-        padding: 8px 12px 12px;
+        padding: 8px 12px;
+        @media (max-width: @tabletMax) {
+          font-size: 24px;
+        }
       }
       .nav-list {
         text-transform: uppercase;
@@ -228,8 +221,9 @@ dl {
       text-transform: uppercase;
       font-size: 48px;
       margin: 48px 0 24px;
+      padding-top: 9px; // I hate doing this but Vollkorn renders with a lot of space below the characters
       &:first-child {
-        margin-top: 12px;
+        margin-top: 0;
       }
     }
 
@@ -271,10 +265,10 @@ header {
     background-image: url(../images/betamax.png);
     background-position: center right;
     background-repeat: no-repeat;
-    padding: 30px 113px 30px 48px;
+    padding: 30px 450px 30px 48px;
     @media (max-width: @tabletMax) {
       .background-size(contain);
-      padding-right: 98px;
+      padding-right: 400px;
     }
     @media (max-width: @phoneMax) {
       background-image: url(../images/stripes-bg.png);
@@ -320,16 +314,6 @@ header {
     &.btn {
       margin: 0 0 12px;
     }
-
-    .icon-rec {
-      .glow(red);
-    }
-    .icon-play {
-      .glow(greenyellow);
-    }
-    .icon-eject {
-      .glow(cyan);
-    }
   }
 }
 
@@ -337,7 +321,6 @@ footer {
   margin-top: 24px;
   padding-top: 12px;
   font-size: 20px;
-  .emboss;
 
   @media (max-width: @phoneMax) {
     padding-left: 20px;
@@ -351,15 +334,6 @@ footer {
     .transition(all .2s linear);
     &:hover {
       text-decoration: none;
-    }
-    &[href^="http://twitter.com"]:hover {
-      .glow(cyan);
-    }
-    &[href^="https://github.com"]:hover {
-      .glow(greenyellow);
-    }
-    &[href^="http://blog.freeside.co"]:hover {
-      .glow(orange);
     }
   }
 }

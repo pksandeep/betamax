@@ -41,11 +41,6 @@ $(document).ready(function() {
 			.find('li:first-child a').tab('show');
 	});
 
-	// affix nav
-	$('#doc-index nav').affix({
-		offset: $('header.jumbotron').outerHeight(true) - 15
-	});
-
     var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
     s.type = 'text/javascript';
     s.async = true;
@@ -54,6 +49,10 @@ $(document).ready(function() {
 
 	// FOUC prevention
 	$(window).load(function() {
+		// affix nav
+		$('#doc-index nav').affix({
+			offset: $('header.jumbotron').outerHeight(true) - 15
+		});
 		$('body').addClass('ready');
 		// force mobile URL bar out of view if we're at the top of the page
 		if ($(window).scrollTop() == 0) {

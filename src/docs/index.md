@@ -299,7 +299,7 @@ Betamax is inspired by the [VCR][vcr] library for Ruby written by Myron Marston.
 
 HTTPS support was largely the work of [Lari Hotari][lari].
 
-The documentation is built with [Jekyll][jekyll], [Twitter Bootstrap](http://twitter.github.com/bootstrap), [LESS][less], [Modernizr][modernizr], [jQuery][jquery] & [Google Code Prettify][prettify]. The site header font is [Play][playfont] by Jonas Hecksher.
+The documentation is built with [Jekyll][jekyll], [Twitter Bootstrap](http://twitter.github.com/bootstrap), [LESS][less], [Modernizr][modernizr], [jQuery][jquery] & [Google Code Prettify][prettify]. The fonts are _Vollkorn_, _Noticia Text_ and _Source Code Pro_.
 
 ## Examples
 
@@ -329,7 +329,6 @@ Betamax's GitHub repository includes [an example Grails application][grailsexamp
 [licence]:http://www.apache.org/licenses/LICENSE-2.0.html
 [maven]:http://maven.apache.org/
 [modernizr]:http://www.modernizr.com/
-[playfont]:http://www.fontsquirrel.com/fonts/play
 [prettify]:http://code.google.com/p/google-code-prettify/
 [proxyselector]:http://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/impl/conn/ProxySelectorRoutePlanner.html
 [rest]:http://en.wikipedia.org/wiki/Representational_state_transfer
