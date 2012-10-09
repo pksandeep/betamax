@@ -118,10 +118,6 @@ dl {
  * Stylistic mixins
  */
 
-.blackMetal {
-  #gradient > .vertical-three-colors(darken(@grayDarker, 5%), @grayDark, 25%, darken(@grayDarker, 10%));
-}
-
 .emboss {
   color: @black;
   text-shadow: 0 1px 0 rgba(255, 255, 255, .1), 0 0 30px rgba(255, 255, 255, .125);
@@ -191,8 +187,6 @@ dl {
       h2 {
         background-color: @borderColor;
         color: @grayLighter;
-        text-transform: none;
-        font-family: @logoFontFamily;
         font-size: 30px;
         margin-top: 0;
         padding: 8px 12px 12px;
@@ -340,10 +334,8 @@ header {
 }
 
 footer {
-  .blackMetal;
   margin-top: 24px;
   padding-top: 12px;
-  font-family: @logoFontFamily;
   font-size: 20px;
   .emboss;
 
