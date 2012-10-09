@@ -132,39 +132,6 @@ dl {
   text-shadow: 0 1px 0 fadeout(@color, 90%), 0 0 30px fadeout(@color, 60%);
 }
 
-.sticker {
-  font-family: @scriptFontFamily;
-  text-transform: uppercase;
-  background-color: @white;
-  border-style: solid;
-  border-width: 2px;
-  border-color: @grayDarker;
-  .border-radius(4px);
-  .backface-visibility(hidden);
-}
-
-.sticker-horizontal {
-  .sticker;
-  background-image: url(../images/stripes-bg.png);
-  background-repeat: repeat-y;
-  background-position: top right;
-  border-right-width: 48px;
-  position: relative;
-  padding: 15px;
-  &:after {
-    position: absolute;
-    right: -52px;
-    color: @grayLighter;
-    font-family: @logoFontFamily;
-    font-size: 28px;
-    font-weight: bold;
-    line-height: 52px;
-    content: "\3b2 eta";
-    text-transform: none;
-    .rotate(270deg);
-  }
-}
-
 .promo {
   min-height: 20px;
   padding: 19px;
@@ -208,14 +175,21 @@ dl {
     line-height: 1.1;
   }
 
+  /**
+   * Index aside with TOC
+   */
   #doc-index {
+    @borderColor: darken(saddlebrown, 12%);
     min-height: 1px;
     nav {
-      font-size: 24px;
-      .sticker;
+      background-color: @white;
+      border: 2px solid @borderColor;
+      .border-radius(4px);
       .rotate(1deg);
+      .backface-visibility(hidden);
+      text-transform: uppercase;
       h2 {
-        background-color: @grayDarker;
+        background-color: @borderColor;
         color: @grayLighter;
         text-transform: none;
         font-family: @logoFontFamily;
@@ -236,13 +210,21 @@ dl {
         a {
           color: @grayDarker;
         }
+        a:hover {
+          background-color: lighten(gold, 20%);
+        }
         > .active > a,
         > .active > a:hover {
-          background-color: @grayLight;
+          background-color: orange;
         }
       }
     }
   }
+
+  /**
+   * Main documentation content
+   */
+
   #doc-content {
     h2 {
       background-image: url("../images/stripes-bg.png");
