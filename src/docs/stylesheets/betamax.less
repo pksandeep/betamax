@@ -266,10 +266,7 @@ header {
   #gradient > .vertical-three-colors(darken(saddlebrown, 10%), darken(saddlebrown, 5%), 25%, darken(saddlebrown, 15%));
   .box-shadow(0 1px 4px rgba(0,0,0,.065));
   padding-top: 30px;
-  padding-bottom: 30px;
   margin-bottom: 30px;
-  border-bottom: 3px solid @grayLighter;
-  .box-shadow(0 1px 6px rgba(0, 0, 0, .75));
 
   @media (max-width: @phoneMax) {
     padding: 20px;
@@ -323,6 +320,26 @@ header {
   .promos {
     @media (max-width: @phoneMax) {
       display: none;
+    }
+  }
+}
+
+.social-bar {
+  padding: 15px 0;
+  text-align: center;
+  background-color: darken(@white, 3%);
+  border-top: 1px solid @white;
+  border-bottom: 1px solid #ddd;
+  .social-buttons {
+    margin-left: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    li {
+      display: inline-block;
+      .ie7-inline-block;
+      padding: 5px 8px;
+      line-height: 1;
     }
   }
 }
