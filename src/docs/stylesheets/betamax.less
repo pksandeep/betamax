@@ -214,6 +214,13 @@ dl {
    */
 
   #doc-content {
+    background-color: rgba(255, 255, 255, 0.5);
+
+    > * {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
     h2 {
       background-image: url("../images/stripes-bg.png");
       background-position: top right;
@@ -223,6 +230,7 @@ dl {
       font-size: 48px;
       margin: 48px 0 24px;
       padding-top: 9px; // I hate doing this but Vollkorn renders with a lot of space below the characters
+      text-indent: 20px;
       &:first-child {
         margin-top: 0;
       }
