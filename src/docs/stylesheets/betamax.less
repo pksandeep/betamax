@@ -122,8 +122,7 @@ dl {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: @bodyBackground;
-  #gradient > .radial(@bodyBackground, tan);
+  background-color: darken(@bodyBackground, 5%);
   .box-shadow(inset 0 1px 6px rgba(0, 0, 0, .75));
   border: 3px solid @grayLighter;
   .border-radius(6px);
@@ -284,7 +283,6 @@ header {
   }
 
   .hero-unit {
-    background-color: darken(@bodyBackground, 5%);
     background-image: url(../images/betamax.png);
     background-position: center right;
     background-repeat: no-repeat;
