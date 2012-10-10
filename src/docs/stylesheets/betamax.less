@@ -233,6 +233,12 @@ dl {
       &:first-child {
         margin-top: 0;
       }
+      @media (max-width: 499px) {
+        font-size: 28px;
+      }
+      @media (min-width: 500px) and (max-width: @phoneMax) {
+        font-size: 36px;
+      }
     }
 
     .navbar {
@@ -328,6 +334,9 @@ header {
   background-color: darken(@white, 3%);
   border-top: 1px solid @white;
   border-bottom: 1px solid #ddd;
+  @media (max-width: @phoneMax) {
+    display: none;
+  }
   .social-buttons {
     margin-left: 0;
     margin-bottom: 0;
