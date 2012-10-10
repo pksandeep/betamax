@@ -55,6 +55,7 @@
 
 body {
   background-image: url('../images/noise-bg.png');
+  line-height: 1.5;
   @media (max-width: @phoneMax) {
     padding-left: 0;
     padding-right: 0;
@@ -164,7 +165,7 @@ dl {
    * Index aside with TOC
    */
   #doc-index {
-    @borderColor: darken(saddlebrown, 12%);
+    @borderColor: @headingsColor;
     min-height: 1px;
     nav {
       background-color: @white;
@@ -225,8 +226,8 @@ dl {
       background-position: top right;
       background-repeat: repeat-y;
       border-bottom: 1px solid @headingsColor;
-      text-transform: uppercase;
       font-size: 48px;
+      text-transform: uppercase;
       margin: 48px 0 24px;
       padding-top: 9px; // I hate doing this but Vollkorn renders with a lot of space below the characters
       text-indent: 20px;
@@ -268,18 +269,35 @@ dl {
 }
 
 header {
-  #gradient > .vertical-three-colors(darken(saddlebrown, 10%), darken(saddlebrown, 5%), 25%, darken(saddlebrown, 15%));
+  background-color: darken(antiquewhite, 5%);
+  background-image: url(../images/betamax.png);
+  background-position: center right;
+  background-repeat: no-repeat;
+  .background-size(contain);
   .box-shadow(0 1px 4px rgba(0,0,0,.065));
   padding-top: 30px;
   margin-bottom: 30px;
 
   @media (max-width: @phoneMax) {
-    padding: 20px;
+    background-image: url(../images/stripes-bg.png);
+    .background-size(inherit);
+    background-repeat: repeat-y;
+    padding: 10px 20px;
   }
 
   h1, h3 {
     font-family: @logoFontFamily;
+  }
+  h1 {
+    line-height: 1;
+    font-size: 46px;
     text-transform: uppercase;
+    @media (min-width: 500px) and (max-width: @tabletMax) {
+      font-size: 72px;
+    }
+    @media (min-width: @desktopMin) {
+      font-size: 110px;
+    }
   }
   h3 {
     font-size: 36px;
@@ -289,9 +307,6 @@ header {
   }
 
   .hero-unit {
-    background-image: url(../images/betamax.png);
-    background-position: center right;
-    background-repeat: no-repeat;
     padding: 30px 450px 30px 48px;
     @media (max-width: @tabletMax) {
       .background-size(contain);
@@ -303,18 +318,6 @@ header {
       background-repeat: repeat-y;
       margin: 0;
       padding: 20px 87px 20px 20px;
-    }
-    h1 {
-      font-size: 46px;
-      @media (min-width: 500px) and (max-width: @phoneMax) {
-        font-size: 70px;
-      }
-      @media (min-width: @tabletMin) and (max-width: @tabletMax) {
-        font-size: 60px;
-      }
-      @media (min-width: @desktopMin) {
-        font-size: 80px;
-      }
     }
     p {
       line-height: 1.5;
@@ -331,9 +334,7 @@ header {
 .social-bar {
   padding: 15px 0;
   text-align: center;
-  background-color: darken(@white, 3%);
-  border-top: 1px solid @white;
-  border-bottom: 1px solid #ddd;
+  background-color: @headingsColor;
   @media (max-width: @phoneMax) {
     display: none;
   }
