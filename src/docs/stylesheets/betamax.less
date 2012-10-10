@@ -177,6 +177,7 @@ dl {
       h2 {
         background-color: @borderColor;
         color: @grayLighter;
+        font-family: @logoFontFamily;
         font-size: 30px;
         margin-top: 0;
         padding: 8px 12px;
@@ -260,6 +261,17 @@ header {
     padding: 20px;
   }
 
+  h1, h3 {
+    font-family: @logoFontFamily;
+    text-transform: uppercase;
+  }
+  h3 {
+    font-size: 36px;
+    @media (min-width: @tabletMin) and (max-width: @tabletMax) {
+      font-size: 28px;
+    }
+  }
+
   .hero-unit {
     background-color: darken(@bodyBackground, 5%);
     background-image: url(../images/betamax.png);
@@ -276,43 +288,27 @@ header {
       background-repeat: repeat-y;
       margin: 0;
       padding: 20px 87px 20px 20px;
-      p {
-        line-height: 1.5;
-      }
     }
     h1 {
-      display: inline-block;
-      font-size: 80px;
-      margin-right: 30px;
-      text-transform: uppercase;
-      @media (max-width: 499px) {
-        font-size: 46px;
-      }
+      font-size: 46px;
       @media (min-width: 500px) and (max-width: @phoneMax) {
         font-size: 70px;
       }
       @media (min-width: @tabletMin) and (max-width: @tabletMax) {
         font-size: 60px;
       }
+      @media (min-width: @desktopMin) {
+        font-size: 80px;
+      }
+    }
+    p {
+      line-height: 1.5;
     }
   }
 
   .promos {
     @media (max-width: @phoneMax) {
       display: none;
-    }
-  }
-
-  h3 {
-    font-size: 36px;
-    text-transform: uppercase;
-
-    @media (min-width: @tabletMin) and (max-width: @tabletMax) {
-      font-size: 28px;
-    }
-
-    &.btn {
-      margin: 0 0 12px;
     }
   }
 }
