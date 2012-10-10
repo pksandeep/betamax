@@ -214,7 +214,7 @@ dl {
    */
 
   #doc-content {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.75);
 
     > * {
       margin-left: 20px;
@@ -275,13 +275,13 @@ header {
   background-repeat: no-repeat;
   .background-size(contain);
   .box-shadow(0 1px 4px rgba(0,0,0,.065));
-  padding-top: 30px;
-  margin-bottom: 30px;
+  padding: 30px 0;
 
   @media (max-width: @phoneMax) {
     background-image: url(../images/stripes-bg.png);
     .background-size(inherit);
     background-repeat: repeat-y;
+    margin-bottom: 30px;
     padding: 10px 20px;
   }
 
@@ -332,9 +332,10 @@ header {
 }
 
 .social-bar {
-  padding: 15px 0;
   text-align: center;
   background-color: @headingsColor;
+  padding: 15px 0;
+  margin-bottom: 30px;
   @media (max-width: @phoneMax) {
     display: none;
   }

@@ -51,7 +51,7 @@ $(document).ready(function() {
 	$(window).load(function() {
 		// affix nav
 		$('#doc-index nav').affix({
-			offset: $('header.jumbotron').outerHeight(true) - 15
+			offset: $('header.jumbotron').outerHeight(true) + $('.social-bar').outerHeight(true) - 15
 		});
 		$('body').addClass('ready');
 		// force mobile URL bar out of view if we're at the top of the page
